@@ -82,40 +82,91 @@ public class practice {
 
         // Sliding window problem for black white repaint
 
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        // Scanner sc = new Scanner(System.in);
+        // int n = sc.nextInt();
 
-        while(n-- > 0){
-            int m = sc.nextInt();  // length
-            int k = sc.nextInt();  // size of window
+        // while(n-- > 0){
+        //     int m = sc.nextInt();  // length
+        //     int k = sc.nextInt();  // size of window
 
-            String s = sc.next();
+        //     String s = sc.next();
 
-            int White = 0;
+        //     int White = 0;
               
-               // Count whites in first window
-            for(int i = 0; i< k; i++){
-                if(s.charAt(i) == 'W'){
-                    White++;        
+        //        // Count whites in first window
+        //     for(int i = 0; i< k; i++){
+        //         if(s.charAt(i) == 'W'){
+        //             White++;        
+        //         }
+        //     }
+
+        //     int ans = White;  // store the minimum white count
+
+        //     // Slide the window
+        //     for(int i = k; i< m; i++){
+        //         if(s.charAt(i-k) == 'W'){    // remove the left white
+        //             White--;
+        //         }
+        //         if(s.charAt(i) == 'W'){   // add the right white
+        //             White++;
+
+        //              ans = Math.min(ans, White);
+        //         }
+
+        //     }
+        //     System.out.println(ans); 
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // HashMap problem
+
+                Scanner sc = new Scanner(System.in);
+
+        int t = sc.nextInt();
+
+        while (t-- > 0) {
+
+            int n = sc.nextInt();
+            long k = sc.nextLong();
+
+            long[] arr = new long[n];
+            HashMap<Long, Integer> map = new HashMap<>();
+
+            for (int i = 0; i < n; i++) {
+                arr[i] = sc.nextLong();
+                map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+            }
+
+            boolean possible = false;
+
+            for (long x : arr) {
+                long need = x - k;
+
+                if (!map.containsKey(need))
+                    continue;
+
+                if (need != x || map.get(need) > 1) {
+                    possible = true;
+                    break;
                 }
             }
 
-            int ans = White;  // store the minimum white count
-
-            // Slide the window
-            for(int i = k; i< m; i++){
-                if(s.charAt(i-k) == 'W'){    // remove the left white
-                    White--;
-                }
-                if(s.charAt(i) == 'W'){   // add the right white
-                    White++;
-
-                     ans = Math.min(ans, White);
-                }
-
-            }
-            System.out.println(ans); 
+            System.out.println(possible ? "YES" : "NO");
         }
+
 
     }
 }
