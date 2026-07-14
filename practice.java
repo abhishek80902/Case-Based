@@ -100,7 +100,7 @@ public class practice {
                 }
             }
 
-            int ans = White;
+            int ans = White;  // store the minimum white count
 
             // Slide the window
             for(int i = k; i< m; i++){
@@ -114,7 +114,7 @@ public class practice {
                 }
 
             }
-            System.out.println(ans);
+            System.out.println(ans); 
         }
 
     }
