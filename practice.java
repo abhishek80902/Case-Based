@@ -133,38 +133,94 @@ public class practice {
 
         // HashMap problem
 
-                Scanner sc = new Scanner(System.in);
+        //         Scanner sc = new Scanner(System.in);
 
+        // int t = sc.nextInt();
+
+        // while (t-- > 0) {
+
+        //     int n = sc.nextInt();
+        //     long k = sc.nextLong();
+
+        //     long[] arr = new long[n];
+        //     HashMap<Long, Integer> map = new HashMap<>();
+
+        //     for (int i = 0; i < n; i++) {
+        //         arr[i] = sc.nextLong();
+        //         map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
+        //     }
+
+        //     boolean possible = false;
+
+        //     for (long x : arr) {
+        //         long need = x - k;
+
+        //         if (!map.containsKey(need))
+        //             continue;
+
+        //         if (need != x || map.get(need) > 1) {
+        //             possible = true;
+        //             break;
+        //         }
+        //     }
+
+        //     System.out.println(possible ? "YES" : "NO");
+        // }
+
+
+
+
+
+
+
+
+
+
+       // You can only swap adjacent digits of different parity.
+
+        Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
 
-        while (t-- > 0) {
+        while(t-- > 0){
+            String s = sc.next();
 
-            int n = sc.nextInt();
-            long k = sc.nextLong();
+            List<Character> odd = new ArrayList<>();
+            List<Character> even = new ArrayList<>();
 
-            long[] arr = new long[n];
-            HashMap<Long, Integer> map = new HashMap<>();
+            // Separate the digits into odd and even lists
 
-            for (int i = 0; i < n; i++) {
-                arr[i] = sc.nextLong();
-                map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
-            }
-
-            boolean possible = false;
-
-            for (long x : arr) {
-                long need = x - k;
-
-                if (!map.containsKey(need))
-                    continue;
-
-                if (need != x || map.get(need) > 1) {
-                    possible = true;
-                    break;
+            for(char c : s.toCharArray()){
+                if((c - '0') % 2 == 0){
+                    even.add(c);
+                } else {
+                    odd.add(c);
                 }
             }
 
-            System.out.println(possible ? "YES" : "NO");
+            // Merge the odd and even lists back into a single string
+            StringBuilder result = new StringBuilder();
+            int i = 0, j = 0;
+            while(i < even.size() && j < odd.size()){
+                if(even.get(i) < odd.get(j)){
+                    result.append(even.get(i));
+                    i++;
+                } else {
+                    result.append(odd.get(j));
+                    j++;
+                }
+            }
+
+            // Append any remaining digits
+            while(i < even.size()){
+                result.append(even.get(i));
+                i++;
+            }
+            while(j < odd.size()){
+                result.append(odd.get(j));
+                j++;
+            }
+
+            System.out.println(result.toString());
         }
 
 
