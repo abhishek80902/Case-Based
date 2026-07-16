@@ -1,4 +1,8 @@
 
+import java.util.Scanner;
+
+
+
 public class practice {
 
     static long Limit = 4294967295L;
@@ -267,6 +271,53 @@ public class practice {
         //     }
         // }
         // System.out.println("Not Possible");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Split an Array into Two Equal Sum Subarrays
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        int totalSum = 0;
+        for(int i = 0; i< n; i++){
+            arr[i] = sc.nextInt();
+            totalSum += arr[i];
+        }
+        // if the sum is odd can not split rqually
+        if(totalSum % 2 != 0){
+            System.out.println("NO");
+        } 
+
+        int targetSum = totalSum / 2;
+        int currentSum = 0;
+
+        // check for the valid split
+        for(int i = 0; i< n-1; i++){
+            currentSum += arr[i];
+            if(currentSum == targetSum){
+                System.out.println("YES");
+                return;
+            }
+        }
+        System.out.println("NO");
+        
+
+           
+        
 
     }
 }
