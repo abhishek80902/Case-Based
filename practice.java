@@ -1,6 +1,21 @@
-import java.util.*;
 
 public class practice {
+
+    static long Limit = 4294967295L;
+
+    static long rev(long n){
+        long rev = 0;
+        while(n > 0){
+            rev = rev * 10 + n % 10;
+            n /= 10;        
+        }
+        return rev;
+    }
+
+
+    static boolean isPalindrome(long n){
+        return n == rev(n);
+    }
     public static void main(String[] args) {
 
         // check hello is subsequence of given string or not
@@ -178,51 +193,80 @@ public class practice {
 
        // You can only swap adjacent digits of different parity.
 
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
+        // Scanner sc = new Scanner(System.in);
+        // int t = sc.nextInt();
 
-        while(t-- > 0){
-            String s = sc.next();
+        // while(t-- > 0){
+        //     String s = sc.next();
 
-            List<Character> odd = new ArrayList<>();
-            List<Character> even = new ArrayList<>();
+        //     List<Character> odd = new ArrayList<>();
+        //     List<Character> even = new ArrayList<>();
 
-            // Separate the digits into odd and even lists
+        //     // Separate the digits into odd and even lists
 
-            for(char c : s.toCharArray()){
-                if((c - '0') % 2 == 0){
-                    even.add(c);
-                } else {
-                    odd.add(c);
-                }
-            }
+        //     for(char c : s.toCharArray()){
+        //         if((c - '0') % 2 == 0){
+        //             even.add(c);
+        //         } else {
+        //             odd.add(c);
+        //         }
+        //     }
 
-            // Merge the odd and even lists back into a single string
-            StringBuilder result = new StringBuilder();
-            int i = 0, j = 0;
-            while(i < even.size() && j < odd.size()){
-                if(even.get(i) < odd.get(j)){
-                    result.append(even.get(i));
-                    i++;
-                } else {
-                    result.append(odd.get(j));
-                    j++;
-                }
-            }
+        //     // Merge the odd and even lists back into a single string
+        //     StringBuilder result = new StringBuilder();
+        //     int i = 0, j = 0;
+        //     while(i < even.size() && j < odd.size()){
+        //         if(even.get(i) < odd.get(j)){
+        //             result.append(even.get(i));
+        //             i++;
+        //         } else {
+        //             result.append(odd.get(j));
+        //             j++;
+        //         }
+        //     }
 
-            // Append any remaining digits
-            while(i < even.size()){
-                result.append(even.get(i));
-                i++;
-            }
-            while(j < odd.size()){
-                result.append(odd.get(j));
-                j++;
-            }
+        //     // Append any remaining digits
+        //     while(i < even.size()){
+        //         result.append(even.get(i));
+        //         i++;
+        //     }
+        //     while(j < odd.size()){
+        //         result.append(odd.get(j));
+        //         j++;
+        //     }
 
-            System.out.println(result.toString());
-        }
+        //     System.out.println(result.toString());
+        // }
 
+
+
+
+
+
+
+
+        // Reverse and Add given number repeatedly to get a Palindrome number
+
+        // Scanner sc = new Scanner(System.in);
+        // long n = sc.nextLong();
+
+        // int count = 0;
+
+        // while(count <= 1000){
+        //     if(isPalindrome(n)){
+        //         System.out.println(count + " " + n);
+        //         break;
+        //     } else {
+        //         n += rev(n);
+
+        //         if(n > Limit){
+        //             System.out.println("Not Possible");
+        //             break;
+        //         }
+        //         count++;
+        //     }
+        // }
+        // System.out.println("Not Possible");
 
     }
 }
