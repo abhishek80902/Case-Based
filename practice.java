@@ -324,36 +324,36 @@ public class practice {
 
         // 3 Sum Smaller Problem
 
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        // Scanner sc = new Scanner(System.in);
+        // int n = sc.nextInt();
 
-        int[] arr = new int[n];
-        for(int i = 0; i< n; i++){
-            arr[i] = sc.nextInt();
-        }
+        // int[] arr = new int[n];
+        // for(int i = 0; i< n; i++){
+        //     arr[i] = sc.nextInt();
+        // }
 
-        int target = sc.nextInt();
+        // int target = sc.nextInt();
 
-        Arrays.sort(arr);
-        int count = 0;
+        // Arrays.sort(arr);
+        // int count = 0;
 
-        for(int i = 0; i< n-2; i++){
-            int left  = i+1;
-            int right = n-1;
+        // for(int i = 0; i< n-2; i++){
+        //     int left  = i+1;
+        //     int right = n-1;
 
-            while(left < right){
-                int sum = arr[i] + arr[left] + arr[right];
+        //     while(left < right){
+        //         int sum = arr[i] + arr[left] + arr[right];
 
-                if(sum < target){
-                    count += (right - left);
-                    left++;
-                }
-                else{
-                    right--;
-                }
-            }
-        }
-        System.out.println(count);
+        //         if(sum < target){
+        //             count += (right - left);
+        //             left++;
+        //         }
+        //         else{
+        //             right--;
+        //         }
+        //     }
+        // }
+        // System.out.println(count);
 
 
 
