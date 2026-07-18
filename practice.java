@@ -1,5 +1,5 @@
 
-import java.util.Scanner;
+import java.util.*;
 
 
 
@@ -287,33 +287,76 @@ public class practice {
 
 
         // Split an Array into Two Equal Sum Subarrays
+        // Scanner sc = new Scanner(System.in);
+        // int n = sc.nextInt();
+
+        // int[] arr = new int[n];
+
+        // int totalSum = 0;
+        // for(int i = 0; i< n; i++){
+        //     arr[i] = sc.nextInt();
+        //     totalSum += arr[i];
+        // }
+        // // if the sum is odd can not split rqually
+        // if(totalSum % 2 != 0){
+        //     System.out.println("NO");
+        // } 
+
+        // int targetSum = totalSum / 2;
+        // int currentSum = 0;
+
+        // // check for the valid split
+        // for(int i = 0; i< n-1; i++){
+        //     currentSum += arr[i];
+        //     if(currentSum == targetSum){
+        //         System.out.println("YES");
+        //         return;
+        //     }
+        // }
+        // System.out.println("NO");
+
+
+
+
+
+
+
+
+        // 3 Sum Smaller Problem
+
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
         int[] arr = new int[n];
-
-        int totalSum = 0;
         for(int i = 0; i< n; i++){
             arr[i] = sc.nextInt();
-            totalSum += arr[i];
         }
-        // if the sum is odd can not split rqually
-        if(totalSum % 2 != 0){
-            System.out.println("NO");
-        } 
 
-        int targetSum = totalSum / 2;
-        int currentSum = 0;
+        int target = sc.nextInt();
 
-        // check for the valid split
-        for(int i = 0; i< n-1; i++){
-            currentSum += arr[i];
-            if(currentSum == targetSum){
-                System.out.println("YES");
-                return;
+        Arrays.sort(arr);
+        int count = 0;
+
+        for(int i = 0; i< n-2; i++){
+            int left  = i+1;
+            int right = n-1;
+
+            while(left < right){
+                int sum = arr[i] + arr[left] + arr[right];
+
+                if(sum < target){
+                    count += (right - left);
+                    left++;
+                }
+                else{
+                    right--;
+                }
             }
         }
-        System.out.println("NO");
+        System.out.println(count);
+
+
+
         
 
            
