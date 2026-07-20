@@ -354,6 +354,21 @@ public class practice {
         //     }
         // }
         // System.out.println(count);
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -363,6 +378,57 @@ public class practice {
         
 
     }
+
+
+
+
+    // Remove letter to Equalize Frequency
+
+
+    // public boolean equalFrequency(String word) {
+
+    //     int[] freq = new int[26];
+
+    //     // Count frequency
+    //     for (char ch : word.toCharArray()) {
+    //         freq[ch - 'a']++;
+    //     }
+
+    //     // Try removing each character
+    //     for (int i = 0; i < word.length(); i++) {
+
+    //         int idx = word.charAt(i) - 'a';
+    //         freq[idx]--;
+
+    //         if (isValid(freq)) {
+    //             return true;
+    //         }
+
+    //         // Restore
+    //         freq[idx]++;
+    //     }
+
+    //     return false;
+    // }
+
+    // private boolean isValid(int[] freq) {
+
+    //     int target = 0;
+
+    //     for (int count : freq) {
+
+    //         if (count == 0)
+    //             continue;
+
+    //         if (target == 0) {
+    //             target = count;
+    //         } else if (count != target) {
+    //             return false;
+    //         }
+    //     }
+
+    //     return true;
+    // }
 }
 
 
