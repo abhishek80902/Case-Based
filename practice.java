@@ -382,7 +382,7 @@ public class practice {
 
 
 
-    // Remove letter to Equalize Frequency
+    // Remove letter to Equalize Frequency - LC 2423
 
 
     // public boolean equalFrequency(String word) {
