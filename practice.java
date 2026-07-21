@@ -2,6 +2,8 @@
 
 
 
+
+
 public class practice {
 
     static long Limit = 4294967295L;
@@ -367,7 +369,22 @@ public class practice {
 
 
 
+       // 6. helper function is below
 
+    //    Scanner sc = new Scanner(System.in);
+    //    int n = sc.nextInt();
+
+    //    while(n-- > 0){
+    //     int t = sc.nextInt();
+    //     int r = sc.nextInt();
+    //     int l = sc.nextInt();
+
+    //     int[] arr = new int[t];
+    //     for(int i = 0; i< t; i++){
+    //         arr[i] = sc.nextInt();
+    //     }
+    //     System.out.println(maxWins(arr, l, r));
+    //    }
 
 
 
@@ -516,7 +533,38 @@ public class practice {
 //     }
 
 
+ 
 
+
+
+
+
+
+
+
+
+       //  Sliding Window 6. Egor got bored and decided to do something
+
+       static int maxWins(int[] arr, int l, int r){
+        int sum = 0;
+        int wins = 0;
+        int left = 0;
+
+        for(int right = 0; right < arr.length; right ++){
+            sum += arr[right];
+            
+            while(left <= right &&  sum > right){
+                sum -= arr[left];
+                left++;
+            }
+            if(sum >= l){
+                wins++;
+                sum = 0;
+                left = right + 1;
+            }
+        }
+        return wins;
+       }
 }
 
 
