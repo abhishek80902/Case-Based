@@ -565,6 +565,47 @@ public class practice {
 //         }
 //         return wins;
 //        }
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+         // 7. Question
+
+        //  static int solve(String s){
+        //     int ans = 0;
+        //     for(char ch : s.toCharArray()){
+        //         if(ch == 'w'){
+        //             ans++;
+        //         }
+        //     }
+
+        //     // split the w and pricess each block of v it is divided into the array of the v 
+        //     String[] parts = s.split("w");
+        //     for(String part : parts){
+        //         ans += part.length()/2;
+        //     }
+        //     return ans;
+        //  }
+
+        //   // main function
+        //  Scanner sc = new Scanner(System.in);
+
+        // int t = sc.nextInt();
+
+        // while (t-- > 0) {
+
+        //     String s = sc.next();
+
+        //     System.out.println(solve(s));
+        // }
+}
 
 
