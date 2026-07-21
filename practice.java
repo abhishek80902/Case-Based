@@ -545,26 +545,26 @@ public class practice {
 
        //  Sliding Window 6. Egor got bored and decided to do something
 
-       static int maxWins(int[] arr, int l, int r){
-        int sum = 0;
-        int wins = 0;
-        int left = 0;
+//        static int maxWins(int[] arr, int l, int r){
+//         int sum = 0;
+//         int wins = 0;
+//         int left = 0;
 
-        for(int right = 0; right < arr.length; right ++){
-            sum += arr[right];
+//         for(int right = 0; right < arr.length; right ++){
+//             sum += arr[right];
             
-            while(left <= right &&  sum > right){
-                sum -= arr[left];
-                left++;
-            }
-            if(sum >= l){
-                wins++;
-                sum = 0;
-                left = right + 1;
-            }
-        }
-        return wins;
-       }
-}
+//             while(left <= right &&  sum > right){
+//                 sum -= arr[left];
+//                 left++;
+//             }
+//             if(sum >= l){
+//                 wins++;
+//                 sum = 0;
+//                 left = right + 1;
+//             }
+//         }
+//         return wins;
+//        }
+// }
 
 
